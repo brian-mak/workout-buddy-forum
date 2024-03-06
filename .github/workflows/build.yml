@@ -42,7 +42,6 @@ jobs:
       uses: docker/build-push-action@v5
       with:
         context: .
-        file: api/forum_api/Dockerfile
         push: true
         tags: ghcr.io/brian-mak/fitness-planner-forum:latest
         build-args: AZURE_SQL_CONNECTIONSTRING=${{ secrets.AZURE_SQL_CONNECTIONSTRING }}  
