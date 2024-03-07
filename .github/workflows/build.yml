@@ -38,8 +38,6 @@ jobs:
         tags: fitness-planner-forum:latest
         push: false
         build-args: AZURE_SQL_CONNECTIONSTRING=${{ secrets.AZURE_SQL_CONNECTIONSTRING }}  
-
-    - name: Run PyTest
       uses: addnab/docker-run-action@v3
       with:
         image: fitness-planner-forum:latest
