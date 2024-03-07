@@ -32,11 +32,11 @@ jobs:
       uses: docker/setup-buildx-action@v3
 
     - name: Build Docker image
-      run: docker build -t fitness-planner-forum .
+      uses: docker/build-push-action@v5
       with:
-        context: .
-        build-args: AZURE_SQL_CONNECTIONSTRING=${{ secrets.AZURE_SQL_CONNECTIONSTRING }}  
-      
+        tags: fitness-planner-forum:latest
+        push: false
+
     - name: Run PyTest
       uses: addnab/docker-run-action@v3
       with:
