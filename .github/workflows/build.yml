@@ -33,6 +33,10 @@ jobs:
 
     - name: Build Docker image
       run: docker build -t fitness-planner-forum .
+      with:
+        context: .
+        build-args: AZURE_SQL_CONNECTIONSTRING=${{ secrets.AZURE_SQL_CONNECTIONSTRING }}  
+      
       
     - name: Run PyTest
       run: docker run fitness-planner-forum pytest app_test.py
