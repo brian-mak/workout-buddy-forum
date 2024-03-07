@@ -35,8 +35,8 @@ jobs:
     #   working-directory: ./api/forum_api
     #   run: docker build -t fitness-planner-forum .
       
-    # - name: Run PyTest
-    #   run: docker run fitness-planner-forum pytest app_test.py
+    - name: Run PyTest
+      run: docker run fitness-planner-forum pytest app_test.py
 
     - name: Build and push Docker image
       uses: docker/build-push-action@v5
